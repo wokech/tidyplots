@@ -1,5 +1,7 @@
 # tidyplots - Visualizing data
 
+# Reference: https://jbengler.github.io/tidyplots/articles/Visualizing-data.html#annotation
+
 # Explore the visualization of different types of datasets using tidyplots
 
 # DATA POINTS #
@@ -160,9 +162,9 @@ time_course %>%
 
 # DISTRIBUTION #
 
-### NOT WORKING ###
+### NOT WORKING ### use power
 energy %>% 
-  tidyplot(x = energy) %>% 
+  tidyplot(x = power) %>% 
   add_histogram()
 
 distributions %>% 
@@ -317,3 +319,20 @@ animals %>%
   add_data_points() %>% 
   add_data_labels(label = animal)
 
+animals %>% 
+  tidyplot(x = weight, y = speed) %>% 
+  add_data_points() %>% 
+  add_data_labels_repel(label = animal)
+
+animals %>% 
+  tidyplot(x = weight, y = speed) %>% 
+  add_data_points() %>% 
+  add_data_labels_repel(data = max_rows(weight, 3), animal) %>% 
+  add_data_labels_repel(data = max_rows(speed, 3), animal)
+
+animals %>% 
+  tidyplot(x = weight, y = speed) %>% 
+  add_reference_lines(x = 4000, y = c(100, 200)) %>% 
+  add_data_points() %>% 
+  add_data_labels_repel(data = max_rows(weight, 3), animal) %>% 
+  add_data_labels_repel(data = max_rows(speed, 3), animal)

@@ -2,7 +2,7 @@
 
 # tidyplots is an R package to generate publication-ready plots for scientific papers
 
-# Links
+# References
 # 1) https://tidyplots.org/
 # 2) https://tidyplots.org/use-cases/
 # 3) https://jbengler.github.io/tidyplots/articles/tidyplots.html

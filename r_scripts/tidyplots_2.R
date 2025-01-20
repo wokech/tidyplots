@@ -1,6 +1,6 @@
 # tidyplots datasets
 
-# Data: https://jbengler.github.io/tidyplots/reference/index.html
+# Reference: https://jbengler.github.io/tidyplots/reference/index.html
 
 # Datasets
 
