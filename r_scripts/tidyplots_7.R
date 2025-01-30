@@ -9,7 +9,7 @@
 library(tidyverse)
 library(tidyplots)
 
-df <- 
+df_1 <- 
   read_csv("https://tidyplots.org/data/sales-of-cigarettes-per-adult-per-day.csv") %>% 
   mutate(
     cigarettes = `Manufactured cigarettes sold per adult per day`,
@@ -17,7 +17,7 @@ df <-
     Entity = fct_rev(Entity)
   )
 
-df %>% 
+df_1 %>% 
   tidyplot(x = Year, y = cigarettes, color = Entity) %>% 
   add_mean_line(linewidth = 0.5) %>% 
   add_title("Sales of cigarettes per adult per day") %>% 
@@ -41,11 +41,11 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-df <- 
+df_2 <- 
   read_csv2("https://tidyplots.org/data/countries-democracies-autocracies.csv") %>% 
   pivot_longer(ends_with("acies"), names_to = "type", values_to = "number")
 
-df %>% 
+df_2 %>% 
   tidyplot(x = Year, y = number, color = type) %>% 
   add_areastack_relative() %>% 
   add_title("Countries by system of government") %>% 
@@ -70,7 +70,7 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-df <- 
+df_3 <- 
   read_csv("https://tidyplots.org/data/electricity-generation-in-Germany.csv")
 
 my_colors <- c("Renewable" = "#4FAE62",
@@ -78,7 +78,7 @@ my_colors <- c("Renewable" = "#4FAE62",
                "Fossil" = "#CCCCCC",
                "Other" = "#888888")
 
-df %>% 
+df_3 %>% 
   dplyr::filter(year %in% c(2003, 2013, 2023)) %>% 
   tidyplot(y = energy, color = energy_type) %>% 
   add_donut() %>% 
@@ -99,7 +99,7 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-df <- 
+df_4 <- 
   read_csv("https://tidyplots.org/data/electricity-generation-in-Germany.csv")
 
 my_colors <- c("Renewable" = "#4FAE62",
@@ -107,7 +107,7 @@ my_colors <- c("Renewable" = "#4FAE62",
                "Fossil" = "#CCCCCC",
                "Other" = "#888888")
 
-df %>% 
+df_4 %>% 
   tidyplot(x = year, y = energy, color = energy_type) %>% 
   add_barstack_absolute() %>% 
   add_title("Electricity generation in Germany (TWh)") %>% 
@@ -126,16 +126,16 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-countries <- c("France", "Germany", "United States", "China", "World", "Norway")
+countries <- c("World", "Africa")
 
-df <- 
+df_5 <- 
   read_csv("https://tidyplots.org/data/energy-use-per-person.csv") %>% 
   mutate(
     energy = `Primary energy consumption per capita (kWh/person)`
   ) %>% 
   filter(Entity %in% countries)
 
-df %>% 
+df_5 %>% 
   tidyplot(x = Year, y = energy, color = Entity) %>% 
   add_mean_line(linewidth = 0.5) %>% 
   add_data_points(data = filter_rows(Year == 2023)) %>% 
@@ -144,7 +144,7 @@ df %>%
   add_caption("Data source: Our World in Data") %>% 
   theme_minimal_y() %>% 
   adjust_padding(right = 0.07) %>% 
-  adjust_y_axis(limits = c(0, 1.4e5), cut_short_scale = TRUE) %>% 
+  adjust_y_axis(limits = c(0, 3e4), cut_short_scale = TRUE) %>% 
   adjust_size(100, 50) %>% 
   adjust_title(fontsize = 14) %>% 
   adjust_colors(colors_discrete_seaside) %>% 

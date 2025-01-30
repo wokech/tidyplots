@@ -162,9 +162,8 @@ time_course %>%
 
 # DISTRIBUTION #
 
-### NOT WORKING ### use power
 energy %>% 
-  tidyplot(x = power) %>% 
+  tidyplot(x = energy) %>% 
   add_histogram()
 
 distributions %>% 
@@ -181,44 +180,37 @@ energy %>%
   tidyplot(color = energy_type) %>% 
   add_pie()
 
-### NOT WORKING ### remove y = energy
 energy %>% 
   tidyplot(color = energy_type) %>% 
   add_donut()
 
-### NOT WORKING ### remove y = energy
 energy %>% 
   tidyplot(color = energy_type) %>% 
   add_barstack_absolute()
 
-### NOT WORKING ### remove y = energy / should it be power
 energy %>% 
-  tidyplot(x = energy_type, y = power, color = energy_type) %>% 
+  tidyplot(x = energy_type, y = energy, color = energy_type) %>% 
   add_sum_bar() %>% 
   add_sum_value() %>% 
   sort_x_axis_labels()
 
-### NOT WORKING ### remove y = energy / should it be power
 energy %>% 
-  tidyplot(x = year, y = power, color = energy_type) %>% 
+  tidyplot(x = year, y = energy, color = energy_type) %>% 
   add_barstack_absolute()
 
-### NOT WORKING ### remove y = energy / should it be power
 energy %>% 
-  tidyplot(x = year, y = power, color = energy_type) %>% 
+  tidyplot(x = year, y = energy, color = energy_type) %>% 
   add_barstack_relative()
 
-### NOT WORKING ### remove y = energy / should it be power
 energy %>% 
-  tidyplot(x = year, y = power, color = energy_type) %>% 
+  tidyplot(x = year, y = energy, color = energy_type) %>% 
   add_areastack_relative()
 
-### NOT WORKING ### remove y = energy / should it be power
 energy %>% 
   # downsample to 4 representative years
   dplyr::filter(year %in% c(2005, 2010, 2015, 2020)) %>% 
   # start plotting
-  tidyplot(y = power, color = energy_type) %>% 
+  tidyplot(y = energy, color = energy_type) %>% 
   add_donut() %>% 
   adjust_colors(new_colors = c("Fossil" = "grey",
                                "Nuclear" = "#F6C54D",
@@ -336,3 +328,4 @@ animals %>%
   add_data_points() %>% 
   add_data_labels_repel(data = max_rows(weight, 3), animal) %>% 
   add_data_labels_repel(data = max_rows(speed, 3), animal)
+

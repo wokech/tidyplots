@@ -9,17 +9,21 @@
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
+# saved in datasets
 
-df <- 
-  read_csv("https://tidyplots.org/data/differential-expression-analysis.csv") %>% 
-  mutate(
-    neg_log10_padj = -log10(padj),
-    direction = if_else(log2FoldChange > 0, "up", "down", NA),
-    candidate = abs(log2FoldChange) >= 1 & padj < 0.05
-  )
+# df_1 <- 
+#   read_csv("https://tidyplots.org/data/differential-expression-analysis.csv") %>% 
+#   mutate(
+#     neg_log10_padj = -log10(padj),
+#     direction = if_else(log2FoldChange > 0, "up", "down", NA),
+#     candidate = abs(log2FoldChange) >= 1 & padj < 0.05
+#   )
 
-df %>% 
+# write_csv(df_1, "C:/R_Files/tidyplots/datasets/de_analysis.csv")
+
+df_1 = read_csv("datasets/de_analysis.csv")
+
+df_1 %>% 
   tidyplot(x = log2FoldChange, y = neg_log10_padj) %>% 
   add_data_points(data = filter_rows(!candidate),
                   color = "lightgrey", rasterize = TRUE) %>% 
@@ -39,12 +43,16 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
+# saved to datasets
 
-df <- 
-  read_csv("https://tidyplots.org/data/pca-plot.csv")
+# df_2 <- 
+#   read_csv("https://tidyplots.org/data/pca-plot.csv")
 
-df %>% 
+# write_csv(df_2, "C:/R_Files/tidyplots/datasets/pca_plot.csv")
+
+df_2 <- read_csv("C:/R_Files/tidyplots/datasets/pca_plot.csv")
+
+df_2 %>% 
   tidyplot(x = pc1, y = pc2, color = group) %>% 
   add_data_points(size = 1.3, white_border = TRUE) %>% 
   adjust_x_axis_title(paste0("Component 1 (", format_number(df$pc1_var*100), "%)")) %>% 
@@ -58,10 +66,16 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-df <- 
-  read_csv("https://tidyplots.org/data/correlation-matrix.csv")
+# saved to datasets
 
-df %>% 
+# df_3 <- 
+#   read_csv("https://tidyplots.org/data/correlation-matrix.csv")
+
+# write_csv(df_3, "C:/R_Files/tidyplots/datasets/correlation-matrix.csv")
+
+df_3 <- read_csv("C:/R_Files/tidyplots/datasets/correlation-matrix.csv")
+
+df_3 %>% 
   tidyplot(x = x, y = y, color = correlation) %>% 
   add_heatmap() %>% 
   sort_x_axis_labels(order_x) %>% 
@@ -80,14 +94,18 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
+# saved to datasets
 
-df <- 
-  read_csv("https://tidyplots.org/data/microbiota.csv") %>% 
-  mutate(genus = fct_inorder(genus),
-         sample = fct_reorder(sample, top, .desc = TRUE))
+# df_4 <- 
+#   read_csv("https://tidyplots.org/data/microbiota.csv") %>% 
+#   mutate(genus = fct_inorder(genus),
+#          sample = fct_reorder(sample, top, .desc = TRUE))
 
-df %>%
+# write_csv(df_4, "C:/R_Files/tidyplots/datasets/microbiota.csv")
+
+df_4 <- read_csv("C:/R_Files/tidyplots/datasets/microbiota.csv")
+
+df_4 %>%
   tidyplot(x = sample, y = rel_abundance, color = genus) %>%
   add_areastack_absolute(alpha = 0.6) %>%
   add_caption("Data source: Tamburini FB, et al. 2022. Nat Comm 13, 926.") %>%
@@ -133,9 +151,11 @@ gene_expression %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
+# df_5 <- read_csv("https://tidyplots.org/data/sequencing-qc-STAR.csv")
+# 
+# write_csv(df_5, "C:/R_Files/tidyplots/datasets/sequencing-qc-STAR.csv")
 
-df <- read_csv("https://tidyplots.org/data/sequencing-qc-STAR.csv")
+df_5 <- read_csv("C:/R_Files/tidyplots/datasets/sequencing-qc-STAR.csv")
 
 my_colors <- c("Uniquely mapped" = "#437bb1",
                "Mapped to multiple loci" = "#7cb5ec",
@@ -143,7 +163,7 @@ my_colors <- c("Uniquely mapped" = "#437bb1",
                "Unmapped: too short" = "#b1084c",
                "Unmapped: other" = "#7f0000")
 
-df %>%
+df_5 %>%
   tidyplot(x = reads, y = sample, color = category) %>%
   add_barstack_absolute(reverse = TRUE) %>%
   theme_minimal_x() %>%
@@ -159,9 +179,7 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
-
-df <- read_csv("https://tidyplots.org/data/sequencing-qc-STAR.csv")
+df_5 <- read_csv("C:/R_Files/tidyplots/datasets/sequencing-qc-STAR.csv")
 
 my_colors <- c("Uniquely mapped" = "#437bb1",
                "Mapped to multiple loci" = "#7cb5ec",
@@ -169,7 +187,7 @@ my_colors <- c("Uniquely mapped" = "#437bb1",
                "Unmapped: too short" = "#b1084c",
                "Unmapped: other" = "#7f0000")
 
-df %>%
+df_5 %>%
   tidyplot(x = reads, y = sample, color = category) %>%
   add_barstack_relative(reverse = TRUE) %>%
   theme_minimal_x() %>%
@@ -185,16 +203,18 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
+# df_6 <- read_csv("https://tidyplots.org/data/sequencing-qc-featureCounts.csv")
 
-df <- read_csv("https://tidyplots.org/data/sequencing-qc-featureCounts.csv")
+# write_csv(df_6, "C:/R_Files/tidyplots/datasets/sequencing-qc-featureCounts.csv")
+
+df_6 <- read_csv("C:/R_Files/tidyplots/datasets/sequencing-qc-featureCounts.csv")
 
 my_colors <- c("Assigned" = "#7cb5ec",
                "Unassigned_Ambiguity" = "#434348",
                "Unassigned_MultiMapping" = "#90ed7d",
                "Unassigned_NoFeatures" = "#f7a35c")
 
-df %>%
+df_6 %>%
   tidyplot(x = reads, y = sample, color = category) %>%
   add_barstack_absolute(reverse = TRUE) %>%
   theme_minimal_x() %>%
@@ -210,16 +230,14 @@ df %>%
 library(tidyverse)
 library(tidyplots)
 
-# Website not working #
-
-df <- read_csv("https://tidyplots.org/data/sequencing-qc-featureCounts.csv")
+df_6 <- read_csv("C:/R_Files/tidyplots/datasets/sequencing-qc-featureCounts.csv")
 
 my_colors <- c("Assigned" = "#7cb5ec",
                "Unassigned_Ambiguity" = "#434348",
                "Unassigned_MultiMapping" = "#90ed7d",
                "Unassigned_NoFeatures" = "#f7a35c")
 
-df %>%
+df_6 %>%
   tidyplot(x = reads, y = sample, color = category) %>%
   add_barstack_relative(reverse = TRUE) %>%
   theme_minimal_x() %>%

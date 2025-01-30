@@ -1,0 +1,101 @@
+sample,category,reads
+Eip_3,Uniquely mapped,2290862
+Eip_5,Uniquely mapped,10414939
+Eip_4,Uniquely mapped,4525002
+Eip_2,Uniquely mapped,1599561
+Eip_1,Uniquely mapped,15733471
+Ein_3,Uniquely mapped,12839457
+Ein_5,Uniquely mapped,10112129
+Ein_4,Uniquely mapped,5354516
+Ein_2,Uniquely mapped,14745009
+Ein_1,Uniquely mapped,19622503
+Hin_3,Uniquely mapped,14483645
+Hin_5,Uniquely mapped,26463368
+Hin_4,Uniquely mapped,31315317
+Hin_2,Uniquely mapped,5392506
+Hin_1,Uniquely mapped,11485549
+Hip_3,Uniquely mapped,22346158
+Hip_5,Uniquely mapped,19700993
+Hip_4,Uniquely mapped,30849706
+Hip_2,Uniquely mapped,11775843
+Hip_1,Uniquely mapped,17155717
+Eip_3,Mapped to multiple loci,929636
+Eip_5,Mapped to multiple loci,3972432
+Eip_4,Mapped to multiple loci,2914676
+Eip_2,Mapped to multiple loci,851789
+Eip_1,Mapped to multiple loci,4079247
+Ein_3,Mapped to multiple loci,1410346
+Ein_5,Mapped to multiple loci,1644243
+Ein_4,Mapped to multiple loci,511732
+Ein_2,Mapped to multiple loci,1244527
+Ein_1,Mapped to multiple loci,2079359
+Hin_3,Mapped to multiple loci,1748924
+Hin_5,Mapped to multiple loci,3173289
+Hin_4,Mapped to multiple loci,4253836
+Hin_2,Mapped to multiple loci,493207
+Hin_1,Mapped to multiple loci,1316737
+Hip_3,Mapped to multiple loci,5697756
+Hip_5,Mapped to multiple loci,5163690
+Hip_4,Mapped to multiple loci,7300274
+Hip_2,Mapped to multiple loci,2646900
+Hip_1,Mapped to multiple loci,4052414
+Eip_3,Mapped to too many loci,23564
+Eip_5,Mapped to too many loci,149080
+Eip_4,Mapped to too many loci,64578
+Eip_2,Mapped to too many loci,21756
+Eip_1,Mapped to too many loci,274920
+Ein_3,Mapped to too many loci,95220
+Ein_5,Mapped to too many loci,88776
+Ein_4,Mapped to too many loci,27903
+Ein_2,Mapped to too many loci,85344
+Ein_1,Mapped to too many loci,143715
+Hin_3,Mapped to too many loci,102603
+Hin_5,Mapped to too many loci,180965
+Hin_4,Mapped to too many loci,230490
+Hin_2,Mapped to too many loci,31642
+Hin_1,Mapped to too many loci,74820
+Hip_3,Mapped to too many loci,241952
+Hip_5,Mapped to too many loci,225277
+Hip_4,Mapped to too many loci,324490
+Hip_2,Mapped to too many loci,128735
+Hip_1,Mapped to too many loci,169685
+Eip_3,Unmapped: too short,174245
+Eip_5,Unmapped: too short,703664
+Eip_4,Unmapped: too short,460204
+Eip_2,Unmapped: too short,142457
+Eip_1,Unmapped: too short,631265
+Ein_3,Unmapped: too short,225516
+Ein_5,Unmapped: too short,220265
+Ein_4,Unmapped: too short,91323
+Ein_2,Unmapped: too short,257539
+Ein_1,Unmapped: too short,277050
+Hin_3,Unmapped: too short,216371
+Hin_5,Unmapped: too short,391730
+Hin_4,Unmapped: too short,517173
+Hin_2,Unmapped: too short,81923
+Hin_1,Unmapped: too short,190134
+Hip_3,Unmapped: too short,866444
+Hip_5,Unmapped: too short,859589
+Hip_4,Unmapped: too short,996350
+Hip_2,Unmapped: too short,336757
+Hip_1,Unmapped: too short,525878
+Eip_3,Unmapped: other,4793
+Eip_5,Unmapped: other,41212
+Eip_4,Unmapped: other,4785
+Eip_2,Unmapped: other,2881
+Eip_1,Unmapped: other,245376
+Ein_3,Unmapped: other,82006
+Ein_5,Unmapped: other,69365
+Ein_4,Unmapped: other,37250
+Ein_2,Unmapped: other,161788
+Ein_1,Unmapped: other,130768
+Hin_3,Unmapped: other,64911
+Hin_5,Unmapped: other,127540
+Hin_4,Unmapped: other,138398
+Hin_2,Unmapped: other,25300
+Hin_1,Unmapped: other,57696
+Hip_3,Unmapped: other,84888
+Hip_5,Unmapped: other,104193
+Hip_4,Unmapped: other,118613
+Hip_2,Unmapped: other,41722
+Hip_1,Unmapped: other,55008
