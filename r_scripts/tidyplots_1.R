@@ -11,8 +11,8 @@
 
 # Install packages
 
-install.packages("tidyverse")
-install.packages("tidyplots")
+#install.packages("tidyverse")
+#install.packages("tidyplots")
 
 # Data preparation
 
@@ -198,8 +198,8 @@ study %>%
   add_data_points() %>% 
   add_sem_errorbar() %>% 
   add_mean_dash() %>% 
-  split_plot(by = dose)
-
+  split_plot(by = dose) %>%
+  save_plot("images/tidyplot_1.png")
 
 # OUTPUT #
 
